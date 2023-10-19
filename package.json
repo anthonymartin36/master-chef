@@ -5,8 +5,8 @@
   "description": "Boilerplate for Phase 1 EDA",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node --watch index.js",
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
     "test": "vitest"
   },
   "repository": {

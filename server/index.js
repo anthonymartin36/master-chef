@@ -1,4 +1,5 @@
-const server = require('./server')
+import server from './server.js'
+//const server = require('./server.js')
 
 const PORT = 3000
 
