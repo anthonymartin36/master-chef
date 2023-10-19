@@ -11,15 +11,14 @@ server.engine('hbs', hbs.engine({ extname: 'hbs' }))
 server.set('view engine', 'hbs')
 server.set('views', Path.resolve('server/views'))
 server.use(express.urlencoded({ extended: true }))
-server.use('/', routes)
+server.use('/recipe', routes)
 
 server.get('/', async (req, res) => {
   const recipes = await fsPromises.readFile(
     Path.resolve('server/data/recipes.json'),
     'UTF-8'
   )
-
-  //Convert to JSON
+  //Convert to object
   recipes = JSON.parse(recipes)
   res.render('index', recipes)
 })
