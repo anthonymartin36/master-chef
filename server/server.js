@@ -12,14 +12,16 @@ server.set('view engine', 'hbs')
 server.set('views', Path.resolve('server/views'))
 server.use(express.urlencoded({ extended: true }))
 server.use('/recipe', routes)
-
+//Server configuration
+const publicFolder = Path.resolve('public')
+server.use(express.static(publicFolder))
 server.get('/', async (req, res) => {
-  const recipes = await fsPromises.readFile(
+  let recipes = await fsPromises.readFile(
     Path.resolve('server/data/recipes.json'),
     'UTF-8'
   )
   //Convert to object
-  recipes = JSON.parse(recipes)
+ recipes = JSON.parse(recipes)
   res.render('index', recipes)
 })
 
