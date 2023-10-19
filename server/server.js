@@ -2,10 +2,12 @@ import express from 'express'
 import hbs from 'express-handlebars'
 import * as Path from 'node:path'
 
-import routes from './routes/index.js'
+import routes from './routes.js'
+
+//Middleware
 
 const server = express()
-server.engine('hbs', hbs())
+server.engine('hbs', hbs.engine({ extname: 'hbs' }))
 server.set('view engine', 'hbs')
 server.set('views', Path.resolve('server/views'))
 server.use(express.urlencoded({ extended: true }))
