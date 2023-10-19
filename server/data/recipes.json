@@ -1,7 +1,7 @@
 {
   "recipes": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Spaghetti Bolognese",
       "description": "This ultimate pasta recipe is a total classic, delicious, and super-easy to knock together.",
       "image": "https://img.jamieoliver.com/jamieoliver/recipe-database/80307052.jpg?tr=w-800,h-1066",
@@ -88,7 +88,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Chicken & Merguez stew",
       "description": "This is a really delicious Tunisian-style casserole, using the French cassoulet as inspiration to create massive flavour with hardly any ingredients. Feel free to add a little harissa into the mix, if you like.",
       "image": "https://img.jamieoliver.com/jamieoliver/recipe-database/147630496.jpg?tr=w-800,h-1066",
@@ -143,7 +143,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Lemon-tzatziki chicken",
       "description": "A brilliant Greek-inspired one-pan family dish. Tzatziki makes a fantastic ready-to-go marinade – it’s untraditional used like this, but I can totally vouch for its deliciousness and ability to tenderize meat.",
       "image": "https://img.jamieoliver.com/jamieoliver/recipe-database/150955945.jpg?tr=w-800,h-1066",
@@ -198,7 +198,7 @@
       ]
     },
     {
-      "id": "4",
+      "id": 4,
       "title": "Shakshuka",
       "description": "Harissa adds warmth and a ray of much-needed sunshine to my twist on a Middle-Eastern classic. Plus it’s a one-pan wonder, which always makes me happy.",
       "image": "https://img.jamieoliver.com/jamieoliver/recipe-database/100021003.jpg?tr=w-800,h-1066",
@@ -285,7 +285,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": 5,
       "title": "Herby steak & crispy potatoes",
       "description": "Inspired by pistou, a beautiful French condiment made with smashed basil, garlic and oil, this tasty dish is a joy to eat. I’ve swapped in pesto for ease, but buy fresh for amplified flavour and texture.",
       "image": "https://img.jamieoliver.com/jamieoliver/recipe-database/152012100.jpg?tr=w-800,h-1066",

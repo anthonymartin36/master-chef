@@ -4,6 +4,7 @@ import * as Path from 'node:path'
 import fsPromises from 'node:fs/promises'
 import routes from './routes.js'
 
+
 //Middleware
 
 const server = express()
@@ -12,6 +13,10 @@ server.set('view engine', 'hbs')
 server.set('views', Path.resolve('server/views'))
 server.use(express.urlencoded({ extended: true }))
 server.use('/', routes)
+//server configuration
+const publicFolder = Path.resolve('public')
+server.use(express.static(publicFolder))
+server.use(express.urlencoded({ extended: false }))
 
 server.get('/', async (req, res) => {
   const recipes = await fsPromises.readFile(
