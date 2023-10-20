@@ -1,3 +1,5 @@
+//Imports
+
 import express from 'express'
 import hbs from 'express-handlebars'
 import * as Path from 'node:path'
@@ -12,7 +14,9 @@ server.set('view engine', 'hbs')
 server.set('views', Path.resolve('server/views'))
 server.use(express.urlencoded({ extended: true }))
 server.use('/recipe', routes)
+
 //Server configuration
+
 const publicFolder = Path.resolve('public')
 server.use(express.static(publicFolder))
 server.get('/', async (req, res) => {
@@ -49,8 +53,11 @@ server.get('/filter/:ingredient', async (req, res) => {
     //returns true if it is
     return currentIngredients.includes(ingredient)
   })
-  console.log(results)
-  res.render('tagresult', { recipes: results, ingredient })
+  let viewData = {
+    recipes: results, //filtered recipes
+    ingredient, //name of the common ingredient that was filtered
+  }
+  res.render('tagresult', viewData)
 })
 
 export default server

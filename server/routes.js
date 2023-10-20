@@ -11,8 +11,8 @@ router.get('/:id', async (req, res) => {
   )
   //Convert to object
   recipes = JSON.parse(recipes).recipes
+  //finds recipe with matching id
   let recipe = recipes.find((recipe) => recipe.id === id)
-  console.log(recipe)
 
   res.render('full-recipe', recipe)
 })
