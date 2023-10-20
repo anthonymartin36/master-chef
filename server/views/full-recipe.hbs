@@ -1,7 +1,28 @@
 
 <h1>{{title}}</h1><br>
-<p>{{description}}</p><br>
-<div id = "image"><img src={{image}} alt=""></div><br>
-<p>{{cooktime}}</p><br>
-<p>{{serving}}</p><br>
-p
+<div class = "recipe-container">
+  <div class = "imageWithIngredients">
+    <img src="{{image}}">
+    {{#each ingredients}}
+    <p>{{measure}} <a href="/filter/{{type}}">{{type}}</a> </p>
+    {{/each}}
+  </div>
+  <div class="directionsContainer">
+    <h2>{{description}}</h2> <br>
+    <p>Servings: {{servings}} Cooktime: {{cooktime}}</p> <br>
+    <ul>
+      {{#each directions}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    
+  </div>
+ 
+</div>
+ <div class = "comments">
+  <h1 class = "commentHeader">Comments</h1>
+    {{#each comments}}
+    <p><strong>Name:</strong> {{this.name}} <br> <strong>Rating: </strong><em>{{this.rating}}</em></p>
+    <p>{{this.text}} </p>
+    {{/each}}
+  </div>
