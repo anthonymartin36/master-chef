@@ -21,8 +21,36 @@ server.get('/', async (req, res) => {
     'UTF-8'
   )
   //Convert to object
- recipes = JSON.parse(recipes)
+  recipes = JSON.parse(recipes)
   res.render('index', recipes)
+})
+
+//creating a route for filters
+server.get('/filter/:ingredient', async (req, res) => {
+  let recipes = await fsPromises.readFile(
+    Path.resolve('server/data/recipes.json'),
+    'UTF-8'
+  )
+  //Convert to object
+  recipes = JSON.parse(recipes).recipes
+  let ingredient = req.params.ingredient.toLocaleLowerCase()
+  //filters through ingredients, checks type of ingredient
+  let results = recipes.filter((recipe) => {
+    //return true if matches
+    //one of the ingredients' types has to match
+    //get the ingredient of the recipe and stick into a variable
+    let currentIngredients = recipe.ingredients
+    //map through the ingredients
+    //create array of only the ingredient name
+    currentIngredients = currentIngredients.map((ingredientObj) => {
+      return ingredientObj.type.toLocaleLowerCase()
+    })
+    //checks if the ingredient is in that list
+    //returns true if it is
+    return currentIngredients.includes(ingredient)
+  })
+  console.log(results)
+  res.render('tagresult', { recipes: results, ingredient })
 })
 
 export default server
