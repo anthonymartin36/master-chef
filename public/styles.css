@@ -48,3 +48,6 @@ img{
 li{
   font-family:tahoma;
 }
+.directionList{
+  line-height: 30px;
+}
