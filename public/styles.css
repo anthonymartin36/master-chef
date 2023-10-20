@@ -23,6 +23,7 @@ img{
   height:200px;
   width:200px;
 }
+
 .imageWithIngredients{
   border: 1px solid black;
   padding:20px;
@@ -43,4 +44,7 @@ img{
 }
 .commentHeader{
   text-align: center;
+}
+li{
+  font-family:tahoma;
 }
