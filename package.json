@@ -2,16 +2,19 @@
   "homepage": "http://anthonymartin36.github.io/master-chef",
   "name": "boilerplate-phase1",
   "type": "module",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Boilerplate for Phase 1 EDA",
   "main": "index.js",
+  "engines": {
+    "node": "v18.17.1"
+  },
   "scripts": {
     "start": "node server/index.js",
-    "dev": "node --watch server/index.js",
-    "test": "vitest",
     "build": "run-s build:client build:server",
     "build:client": "vite build",
-    "build:server": "esbuild --packages=external --platform=node --format=esm --outfile=dist/server.js --bundle server/index.ts"
+    "build:server": "esbuild --packages=external --platform=node --format=esm --outfile=dist/server.js --bundle server/index.ts",
+    "dev": "node --watch server/index.js",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
