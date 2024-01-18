@@ -1,10 +1,12 @@
-# Boilerplate: Phase 1
+Master chef is a show case of JavaScript Express, Express Handlebars and JSON Object read files.
+
+Efectively showcasing a list of receipes and ingredients. This project demonstrates reading in from JSON Objects, publishing data to the web and connecting between information in receipies and ingredients. 
 
 ## Setup
 
 ### What's included
 
-Phase 1 boilerplate project with:
+Phase 1 project with:
 
 - Express
 - Express Handlebars
