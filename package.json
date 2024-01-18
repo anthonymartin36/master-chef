@@ -1,5 +1,5 @@
 {
-  "homepage" : "http://anthonymartin36.github.io/master-chef",
+  "homepage": "http://anthonymartin36.github.io/master-chef",
   "name": "boilerplate-phase1",
   "type": "module",
   "version": "0.2.0",
@@ -7,10 +7,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-page -d build", 
     "dev": "node --watch server/index.js",
-    "test": "vitest"
+    "test": "vitest",
+    "build": "run-s build:client build:server",
+    "build:client": "vite build",
+    "build:server": "esbuild --packages=external --platform=node --format=esm --outfile=dist/server.js --bundle server/index.ts"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,10 @@
     "url": "https://github.com/dev-academy-challenges/boilerplate-phase1/issues"
   },
   "dependencies": {
+    "esbuild": "^0.19.11",
     "express": "^4.17.2",
-    "express-handlebars": "^6.0.2"
+    "express-handlebars": "^6.0.2",
+    "vite": "^5.0.11"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
