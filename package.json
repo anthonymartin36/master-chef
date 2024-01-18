@@ -28,6 +28,7 @@
     "express-handlebars": "^6.0.2"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "vitest": "^0.34.4"
   }
 }
