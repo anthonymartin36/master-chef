@@ -7,6 +7,5 @@ RUN npm ci
 COPY . .
 
 ENV NODE_ENV=production
-RUN npm run build -s
 RUN npm run start --if-present
 RUN npm prune --omit=dev
