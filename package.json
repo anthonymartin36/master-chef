@@ -1,6 +1,6 @@
 {
   "homepage": "http://anthonymartin36.github.io/master-chef",
-  "name": "boilerplate-phase1",
+  "name": "master-chef",
   "type": "module",
   "version": "1.0.0",
   "description": "Boilerplate for Phase 1 EDA",
@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
-    "build": "node server/index.js",
+    "build": "vite build --base=/server/index.js",
     "test": "vitest"
   },
   "repository": {
