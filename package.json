@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
-    "build": "vite build --base=/server/index.js",
+    "build": "netlify deploy --prod",
     "test": "vitest"
   },
   "repository": {
@@ -31,6 +31,9 @@
     "esbuild": "^0.19.11",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
+    "netlify-cli": "^17.23.2",
+    "netlify-lambda": "^2.0.16",
+    "serverless-http": "^3.2.0",
     "vite": "^5.0.11",
     "vite-plugin-handlebars": "^2.0.0"
   },

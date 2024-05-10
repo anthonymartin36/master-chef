@@ -1,5 +1,5 @@
 //Imports
-
+import serverless from 'serverless-http'
 import express from 'express'
 import hbs from 'express-handlebars'
 import * as Path from 'node:path'
@@ -70,3 +70,5 @@ server.get('/filter/:ingredient', async (req, res) => {
 })
 
 export default server
+server.use('/.netlify/functions/api', routes)
+//module.exports.handler = serverless(app)
