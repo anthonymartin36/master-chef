@@ -6,7 +6,7 @@
   "description": "Boilerplate for Phase 1 EDA",
   "main": "index.js",
   "engines": {
-    "node": "v18.17.1"
+    "node": "v22.1.0"
   },
   "scripts": {
     "start": "node server/index.js",
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
+    "handlebars": "^4.7.8",
     "npm-run-all": "^4.1.5",
     "vitest": "^0.34.4"
   }
