@@ -10,8 +10,12 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "dev": "node --watch server/index.js",
-    "build": "netlify deploy --prod",
+    "dev": "run-p dev:client dev:server",
+    "dev:client": "vite",
+    "dev:server": "tsx watch server/index.js",
+    "build": "run-s build:client build:server",
+    "build:client": "vite build",
+    "build:server": "esbuild --packages=external --platform=node --format=esm --outfile=dist/server.js --bundle server/index.js",
     "test": "vitest"
   },
   "repository": {
@@ -31,9 +35,6 @@
     "esbuild": "^0.19.11",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
-    "netlify-cli": "^17.23.2",
-    "netlify-lambda": "^2.0.16",
-    "serverless-http": "^3.2.0",
     "vite": "^5.0.11",
     "vite-plugin-handlebars": "^2.0.0"
   },

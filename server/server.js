@@ -1,5 +1,4 @@
 //Imports
-import serverless from 'serverless-http'
 import express from 'express'
 import hbs from 'express-handlebars'
 import * as Path from 'node:path'
@@ -19,14 +18,6 @@ server.use('/recipe', routes)
 
 const publicFolder = Path.resolve('public')
 server.use(express.static(publicFolder))
-
-// if (process.env.NODE_ENV === 'production') {
-//   server.use(express.static(Path.resolve('public')))
-//   server.use('/assets', express.static(Path.resolve('./dist/assets')))
-//   server.get('*', (req, res) => {
-//     res.sendFile(Path.resolve('./dist/index.html'))
-//   })
-// }
 
 server.get('/', async (req, res) => {
   let recipes = await fsPromises.readFile(
@@ -70,5 +61,3 @@ server.get('/filter/:ingredient', async (req, res) => {
 })
 
 export default server
-server.use('/.netlify/functions/api', routes)
-//module.exports.handler = serverless(app)
